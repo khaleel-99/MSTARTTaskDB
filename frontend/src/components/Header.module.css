@@ -1,0 +1,272 @@
+.header {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+html[data-theme="dark"] .header {
+    background: rgba(26, 26, 46, 0.7);
+    border-bottom: 1px solid rgba(167, 139, 250, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.headerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1800px;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.logo {
+    background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.9) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    text-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
+    animation: logoGlow 3s ease-in-out infinite alternate;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+html[data-theme="light"] .logo {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 40px rgba(102, 126, 234, 0.3);
+}
+
+@keyframes logoGlow {
+    0% {
+        filter: drop-shadow(0 0 10px rgba(102, 126, 234, 0.5));
+    }
+
+    100% {
+        filter: drop-shadow(0 0 20px rgba(118, 75, 162, 0.8));
+    }
+}
+
+.navSection {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.userBadge {
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-on-primary);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+html[data-theme="light"] .userBadge {
+    background: rgba(102, 126, 234, 0.1);
+    border: 1px solid rgba(102, 126, 234, 0.3);
+    color: #667eea;
+}
+
+.userRole {
+    font-weight: 800;
+    color: var(--text-on-primary);
+}
+
+html[data-theme="light"] .userRole {
+    color: #764ba2;
+}
+
+.iconButton {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-on-primary);
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+html[data-theme="light"] .iconButton {
+    background: rgba(102, 126, 234, 0.1);
+    border: 1px solid rgba(102, 126, 234, 0.3);
+}
+
+.iconButton:hover {
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+html[data-theme="light"] .iconButton:hover {
+    background: rgba(102, 126, 234, 0.2);
+}
+
+.navButton {
+    padding: 12px 28px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border: 2px solid transparent;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-on-primary);
+    backdrop-filter: blur(10px);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+html[data-theme="light"] .navButton {
+    background: rgba(255, 255, 255, 0.7);
+    color: #667eea;
+}
+
+.navButton::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.navButton:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.navButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+html[data-theme="light"] .navButton:hover {
+    background: rgba(102, 126, 234, 0.15);
+}
+
+.navButton.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+    transform: translateY(-2px);
+}
+
+.cartButton {
+    position: relative;
+    background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);
+    color: white;
+    border: none;
+}
+
+.cartButton:hover {
+    box-shadow: 0 8px 25px rgba(86, 171, 47, 0.5);
+}
+
+.cartBadge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+    color: white;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 900;
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-5px) scale(1.1);
+    }
+}
+
+.logoutButton {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+    color: white;
+    border: none;
+}
+
+.logoutButton:hover {
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.5);
+}
+
+@media (max-width: 1200px) {
+    .headerContent {
+        flex-wrap: wrap;
+    }
+
+    .navSection {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 20px;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    .navButton {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+
+    .iconButton {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+}

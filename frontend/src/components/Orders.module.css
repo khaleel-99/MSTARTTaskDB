@@ -1,0 +1,151 @@
+.ordersContainer {
+    padding: 40px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.header {
+    margin-bottom: 40px;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #666;
+}
+
+.tableContainer {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableHeader {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.tableHeader th {
+    padding: 18px 20px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tableBody tr {
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.2s ease;
+}
+
+.tableBody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.tableBody tr:last-child {
+    border-bottom: none;
+}
+
+.tableBody td {
+    padding: 18px 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.orderId {
+    font-weight: 600;
+    color: #667eea;
+}
+
+.amount {
+    font-weight: 600;
+    color: #333;
+    font-size: 16px;
+}
+
+.statusBadge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.statusPending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.statusCompleted {
+    background: #d4edda;
+    color: #155724;
+}
+
+.statusCancelled {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.statusProcessing {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+.statusSelect {
+    padding: 6px 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    background: white;
+    transition: border-color 0.3s;
+}
+
+.statusSelect:hover {
+    border-color: #667eea;
+}
+
+.statusSelect:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.loading {
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 18px;
+    color: #666;
+}
+
+.error {
+    text-align: center;
+    padding: 40px 20px;
+    background: #fee;
+    color: #c33;
+    border-radius: 12px;
+    margin: 20px;
+    font-size: 16px;
+}
+
+.emptyState {
+    text-align: center;
+    padding: 60px 20px;
+    color: #999;
+    font-size: 18px;
+}
