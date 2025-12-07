@@ -47,8 +47,8 @@ dotnet ef database update
 ```
 
 This will create the database with sample data including:
-- Default admin user: `admin` / `admin123`
-- Default regular user: `user` / `user123`
+- Default admin user: `admin@example.com` / `Admin123!`
+- Default regular user: `user@example.com` / `User123!`
 - 10 sample products
 
 ### 4. Frontend Setup
